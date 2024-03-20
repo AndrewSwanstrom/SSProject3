@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+    path: Assets/StuckDownUnder/Scenes/MainMenu.unity
+    guid: 92d094ef989117c4996abbc39287cf18
+  - enabled: 1
+    path: Assets/StuckDownUnder/Scenes/MainHub.unity
+    guid: 42d3eeb9f1eedb843b34e2a491ce48c7
+  - enabled: 1
+    path: Assets/StuckDownUnder/Scenes/FireLevel.unity
+    guid: dd0068b1ef676864f9f1a1b2b489af46
+  - enabled: 1
+    path: Assets/StuckDownUnder/Scenes/IceLevel.unity
+    guid: 88281889fb70d214ba1bab965e812f8b
+  - enabled: 1
+    path: Assets/StuckDownUnder/Scenes/ElectricLevel.unity
+    guid: 51bea67b1e9026346aa16103dd9fd0b0
   m_configObjects: {}
