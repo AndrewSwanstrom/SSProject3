@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
+  m_IndirectSpecularColor: {r: 261.80057, g: 324.3278, b: 429.24698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -942,12 +942,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1213290335 stripped
+--- !u!1 &1213290335
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6272124618331211668, guid: 717420e4780525146924b5b852ac2e62,
-    type: 3}
-  m_PrefabInstance: {fileID: 2870833307038629371}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1213290336}
+  m_Layer: 0
+  m_Name: 
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1213290336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213290335}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1256872344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1206,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pausePanel
       value: 
-      objectReference: {fileID: 2351964315685985338}
+      objectReference: {fileID: 0}
     - target: {fileID: 7086980800293082873, guid: 1796d7e703fbe094b9545eea68abd7c8,
         type: 3}
       propertyPath: pauseScreen
@@ -2085,6 +2110,7 @@ LightingSettings:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1213290336}
   - {fileID: 1371626388}
   - {fileID: 1779563365}
   - {fileID: 1394114198}
@@ -2092,6 +2118,5 @@ SceneRoots:
   - {fileID: 382173408}
   - {fileID: 687857636}
   - {fileID: 1148856501}
-  - {fileID: 2870833307038629371}
   - {fileID: 198269655}
   - {fileID: 1310775165}
