@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
     public float rotationCameraSpeed = 50f;
     public float rotationLagSpeed = 5f;
 
+    Animator animator;
+
+    Vector2 lookDirection = new Vector2(1,0);
+
     private CharacterController characterController;
     private Vector3 playerVelocity;
     private bool isGrounded;
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         currentStamina = maxStamina;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -43,6 +48,18 @@ public class PlayerController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+
+        Vector2 move = new Vector2(horizontalInput, verticalInput);
+
+        if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
+        {
+            lookDirection.Set(move.x, move.y);
+            lookDirection.Normalize();
+        }
+
+        animator.SetFloat("Look X", lookDirection.x);
+        animator.SetFloat("Look Y", lookDirection.y);
+        animator.SetFloat("Speed", move.magnitude);
 
         Vector3 control = new Vector3 (1,0,1);
         Vector3 camForward = cameraTransform.forward.normalized;
