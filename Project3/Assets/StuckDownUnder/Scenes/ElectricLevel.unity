@@ -2697,6 +2697,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325874173}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &345644916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2667420695750230902, guid: 48858305063b37343895549e295317b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1902678995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &345644920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345644916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6cfe35d94025c44aa91252d819606f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleCount: 0
 --- !u!1 &351241099
 GameObject:
   m_ObjectHideFlags: 0
@@ -15053,6 +15072,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: control Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 2667420695750230902, guid: 48858305063b37343895549e295317b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Console
+      objectReference: {fileID: 0}
     - target: {fileID: 3336960967447124428, guid: 48858305063b37343895549e295317b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15106,7 +15130,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2667420695750230902, guid: 48858305063b37343895549e295317b5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 345644920}
   m_SourcePrefab: {fileID: 100100000, guid: 48858305063b37343895549e295317b5, type: 3}
 --- !u!1 &1904796994
 GameObject:

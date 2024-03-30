@@ -26,12 +26,14 @@ public class PlayerController : MonoBehaviour
     public float currentStamina;
 
     public Transform cameraTransform;
+    bool isElectric;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         currentStamina = maxStamina;
         animator = GetComponent<Animator>();
+        isElectric = false;
     }
 
     void Update()
@@ -55,6 +57,16 @@ public class PlayerController : MonoBehaviour
         {
             lookDirection.Set(move.x, move.y);
             lookDirection.Normalize();
+        }
+        if(Input.GetKeyDown(KeyCode.R) && !isElectric)
+        {
+            animator.SetBool("Electric", true);
+            isElectric = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.R) && isElectric)
+        {
+            animator.SetBool("Electric",false);
+            isElectric = false;
         }
 
         animator.SetFloat("Look X", lookDirection.x);

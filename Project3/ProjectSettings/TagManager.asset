@@ -9,6 +9,7 @@ TagManager:
   - Ninety
   - T
   - Straight
+  - Console
   layers:
   - Default
   - TransparentFX
