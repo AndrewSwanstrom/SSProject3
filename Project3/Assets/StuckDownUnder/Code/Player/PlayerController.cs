@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,9 +25,16 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isSprinting;
     public float currentStamina;
+    public bool electricPower;
+
+    public GameObject electricIndicator;
+    public GameObject baseText;
+    public GameObject electricText;
 
     public Transform cameraTransform;
     bool isElectric;
+    public GameObject electricOrb;
+    private float amount = 5f;
 
     void Start()
     {
@@ -34,6 +42,11 @@ public class PlayerController : MonoBehaviour
         currentStamina = maxStamina;
         animator = GetComponent<Animator>();
         isElectric = false;
+        electricPower = false;
+        Time.timeScale = 1f;
+        electricIndicator.SetActive(false);
+        baseText.SetActive(true);
+        electricText.SetActive(false);
     }
 
     void Update()
@@ -48,6 +61,11 @@ public class PlayerController : MonoBehaviour
     //player movement
     void MovePlayer()
     {
+        Vector3 cameraEulerAngles = cameraTransform.eulerAngles;
+        cameraEulerAngles.x = 0f;
+        cameraEulerAngles.z = 0f;
+
+        Quaternion targetRotation = Quaternion.Euler(cameraEulerAngles);
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
@@ -58,17 +76,6 @@ public class PlayerController : MonoBehaviour
             lookDirection.Set(move.x, move.y);
             lookDirection.Normalize();
         }
-        if(Input.GetKeyDown(KeyCode.R) && !isElectric)
-        {
-            animator.SetBool("Electric", true);
-            isElectric = true;
-        }
-        else if(Input.GetKeyDown(KeyCode.R) && isElectric)
-        {
-            animator.SetBool("Electric",false);
-            isElectric = false;
-        }
-
         animator.SetFloat("Look X", lookDirection.x);
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
@@ -93,6 +100,63 @@ public class PlayerController : MonoBehaviour
         }
 
         characterController.Move(playerVelocity * Time.deltaTime);
+        if(Input.GetKeyDown(KeyCode.R) && !isElectric)
+        {
+            animator.SetBool("Electric", true);
+            isElectric = true;
+            electricIndicator.SetActive(true);
+            baseText.SetActive(false);
+            electricText.SetActive(true);
+        }
+        else if(Input.GetKeyDown(KeyCode.R) && isElectric)
+        {
+            animator.SetBool("Electric",false);
+            isElectric = false;
+            electricIndicator.SetActive(false);
+            baseText.SetActive(true);
+            electricText.SetActive(false);
+        }
+        if(isElectric && Input.GetKeyDown(KeyCode.Z)&&!electricPower)
+        {
+            animator.SetBool("ElectricPower", true);
+            electricPower = true;
+            moveSpeed = 0;
+            sprintSpeed = 0;
+        }
+        else if(electricPower&& Input.GetKeyDown(KeyCode.Z))
+        {
+            animator.SetBool("ElectricPower",false);
+            electricPower = false;
+            moveSpeed = 5f;
+            sprintSpeed = 8f;
+        }
+        if(electricPower)
+        {
+            if(Input.GetKeyDown(KeyCode.W))
+            {
+                GameObject projectileObject = Instantiate(electricOrb, transform.position, Quaternion.Euler(0,cameraEulerAngles.y,0));
+                ElectricOrb projectile = projectileObject.GetComponent<ElectricOrb>();
+                projectile.Launch(moveDirection, 300);
+            }
+            else if(Input.GetKeyDown(KeyCode.S))
+            {
+                GameObject projectileObject = Instantiate(electricOrb, transform.position, Quaternion.Euler(0,cameraEulerAngles.y,0));
+                ElectricOrb projectile = projectileObject.GetComponent<ElectricOrb>();
+                projectile.Launch(moveDirection, 300);
+            }
+            else if(Input.GetKeyDown(KeyCode.A))
+            {
+                GameObject projectileObject = Instantiate(electricOrb, transform.position, Quaternion.Euler(0,cameraEulerAngles.y,0));
+                ElectricOrb projectile = projectileObject.GetComponent<ElectricOrb>();
+                projectile.Launch(moveDirection, 300);
+            }
+            else if(Input.GetKeyDown(KeyCode.D))
+            {
+                GameObject projectileObject = Instantiate(electricOrb, transform.position, Quaternion.Euler(0,cameraEulerAngles.y,0));
+                ElectricOrb projectile = projectileObject.GetComponent<ElectricOrb>();
+                projectile.Launch(moveDirection, 300);
+            }
+        }
     }
 
     //rotate player based on the camera angle
@@ -169,6 +233,10 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
+        }
+        if(Input.GetKey(KeyCode.X))
+        {
+            characterController.Move(Vector3.down * moveSpeed);
         }
     }
 }

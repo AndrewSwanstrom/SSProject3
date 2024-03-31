@@ -245,7 +245,7 @@ Material:
     - _SurfaceType: 1
     - _TexWorldScale: 1.42
     - _TexWorldScaleEmissive: 1
-    - _Thickness: 0.215
+    - _Thickness: 0.1
     - _TransmissionEnable: 1
     - _TransmissionMask: 1
     - _TransparentBackfaceEnable: 1
@@ -266,9 +266,9 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.18320575, g: 0.19242528, b: 0.21698111, a: 0.08627451}
+    - _BaseColor: {r: 0.39168745, g: 0.42112407, b: 0.509434, a: 0.08627451}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.18320572, g: 0.19242525, b: 0.21698105, a: 0.08627451}
+    - _Color: {r: 0.39168742, g: 0.42112404, b: 0.509434, a: 0.08627451}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

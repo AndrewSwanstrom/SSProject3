@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Rendering.HighDefinition.Attributes;
 
 public class MazeGenerator : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class MazeGenerator : MonoBehaviour
 
     private MazeCell[,] _mazeGrid;
 
-
     void Start()
     {
         _mazeGrid = new MazeCell[_mazeWidth, _mazeDepth];
@@ -31,6 +31,10 @@ public class MazeGenerator : MonoBehaviour
         }
 
         GenerateMaze(null, _mazeGrid[0,0]);
+    }
+    void Update()
+    {
+
     }
 
 
@@ -140,10 +144,5 @@ public class MazeGenerator : MonoBehaviour
             currentCell.ClearFrontWall();
             return;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
