@@ -27,6 +27,7 @@ public class UIController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         if (pausePanel != null)
         {
             pausePanel.SetActive(false);
