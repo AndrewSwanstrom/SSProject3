@@ -1356,7 +1356,12 @@ MonoBehaviour:
   rotationCameraSpeed: 50
   rotationLagSpeed: 5
   currentStamina: 0
+  electricPower: 0
+  electricIndicator: {fileID: 0}
+  baseText: {fileID: 0}
+  electricText: {fileID: 0}
   cameraTransform: {fileID: 213958475}
+  electricOrb: {fileID: 0}
 --- !u!1 &1515915688
 GameObject:
   m_ObjectHideFlags: 3
