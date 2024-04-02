@@ -5,10 +5,11 @@ using UnityEngine;
 public class ElectricRestart : MonoBehaviour
 {
     CharacterController characterController;
+    public GameObject gameOver;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameOver.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,10 +23,8 @@ public class ElectricRestart : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            characterController = other.GetComponent<CharacterController>();
-            characterController.enabled = false;
-            other.transform.position = new Vector3(-5.659f, 1.97f, 0.269f);
-            characterController.enabled = true;
+            gameOver.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
