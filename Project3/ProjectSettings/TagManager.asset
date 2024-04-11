@@ -9,14 +9,19 @@ TagManager:
   - Ninety
   - T
   - Straight
+  - Console
+  - Maze
+  - ConsoleTrigger
+  - Buzzer
+  - Orb
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - ElectricOrb
   - 
   - 
   - 

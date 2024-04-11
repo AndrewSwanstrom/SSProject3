@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/StuckDownUnder/Scenes/MainMenu.unity
     guid: 92d094ef989117c4996abbc39287cf18
+  - enabled: 1
+    path: Assets/StuckDownUnder/Scenes/ElectricLevel.unity
+    guid: 51bea67b1e9026346aa16103dd9fd0b0
   - enabled: 0
     path: Assets/StuckDownUnder/Scenes/MainHub.unity
     guid: 42d3eeb9f1eedb843b34e2a491ce48c7
@@ -17,7 +20,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/StuckDownUnder/Scenes/IceLevel.unity
     guid: 88281889fb70d214ba1bab965e812f8b
-  - enabled: 1
-    path: Assets/StuckDownUnder/Scenes/ElectricLevel.unity
-    guid: 51bea67b1e9026346aa16103dd9fd0b0
   m_configObjects: {}
