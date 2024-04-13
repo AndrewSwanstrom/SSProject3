@@ -154,11 +154,13 @@ MonoBehaviour:
   HasThumbnail: 1
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://TerracottaTiles\" label=\"\" >\n 
     <presetinput identifier=\"$outputsize\" uid=\"2705302802\" type=\"8\" value=\"11,11\"
-    />\n  <presetinput identifier=\"input_selection\" uid=\"3257047448\" type=\"4\"
-    value=\"3\" />\n  <presetinput identifier=\"spline_number\" uid=\"3257162967\"
-    type=\"4\" value=\"1\" />\n  <presetinput identifier=\"x_amount\" uid=\"3257106626\"
-    type=\"4\" value=\"20\" />\n  <presetinput identifier=\"y_amount\" uid=\"3257106624\"
-    type=\"4\" value=\"20\" />\n </sbspreset>\n"
+    />\n  <presetinput identifier=\"spline_number\" uid=\"3257162967\" type=\"4\"
+    value=\"512\" />\n  <presetinput identifier=\"x_amount\" uid=\"3257106626\" type=\"4\"
+    value=\"20\" />\n  <presetinput identifier=\"y_amount\" uid=\"3257106624\" type=\"4\"
+    value=\"20\" />\n  <presetinput identifier=\"dirt_level\" uid=\"3257148940\"
+    type=\"0\" value=\"0.468\" />\n  <presetinput identifier=\"grunge_amount\" uid=\"3257148978\"
+    type=\"0\" value=\"0.739\" />\n  <presetinput identifier=\"grunge_scale\" uid=\"3257148982\"
+    type=\"4\" value=\"6\" />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
@@ -225,7 +227,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 4
           WidgetType: 6
-        Data: 3
+        Data: 1
         NumericalDescription:
           DefaultValue: 1
           MinValue: 0
@@ -253,7 +255,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 4
           WidgetType: 1
-        Data: 1
+        Data: 512
         NumericalDescription:
           DefaultValue: 92
           MinValue: 1
@@ -380,7 +382,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 0.35
+        Data: 0.468
         NumericalDescription:
           DefaultValue: 0.35
           MinValue: 0
@@ -400,7 +402,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 0.64
+        Data: 0.739
         NumericalDescription:
           DefaultValue: 0.64
           MinValue: 0
@@ -440,7 +442,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 4
           WidgetType: 1
-        Data: 3
+        Data: 6
         NumericalDescription:
           DefaultValue: 3
           MinValue: 1
