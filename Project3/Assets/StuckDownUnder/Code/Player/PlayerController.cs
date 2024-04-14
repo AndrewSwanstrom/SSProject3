@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +19,24 @@ public class PlayerController : MonoBehaviour
     public float rotationCameraSpeed = 50f;
     public float rotationLagSpeed = 5f;
 
+    public GameObject electricHolder;
+    public GameObject iceHolder;
+    public GameObject fireHolder;
+
+    [SerializeField] private float electricPowerCurrent;
+    [SerializeField] private float electricPowerMax;
+    [SerializeField] private float icePowerCurrent;
+    [SerializeField] private float icePowerMax;
+    [SerializeField] private float firePowerCurrent;
+    [SerializeField] private float firePowerMax;
+    [SerializeField] private Image electricPowerBar;
+    [SerializeField] private Image icePowerBar;
+    [SerializeField] private Image firePowerBar;
+
+    public Vector3 boxSize;
+    public float maxDistance;
+    public LayerMask layerMask;
+
     Animator animator;
 
     Vector2 lookDirection = new Vector2(1,0);
@@ -23,18 +44,22 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
     private Vector3 playerVelocity;
     private bool isGrounded;
+    private bool theTrueisGrounded;
     private bool isSprinting;
     public float currentStamina;
     public bool electricPower;
-
-    public GameObject electricIndicator;
-    public GameObject baseText;
-    public GameObject electricText;
+    public bool icePower;
+    public bool firePower;
 
     public Transform cameraTransform;
     bool isElectric;
     public GameObject electricOrb;
     private float amount = 5f;
+
+    bool fireAbility;
+
+    string[] abilities;
+    int rotationNum;
 
     void Start()
     {
@@ -44,9 +69,17 @@ public class PlayerController : MonoBehaviour
         isElectric = false;
         electricPower = false;
         Time.timeScale = 1f;
-        electricIndicator.SetActive(false);
-        baseText.SetActive(true);
-        electricText.SetActive(false);
+        rotationNum = 0;
+        fireAbility = false;
+        electricHolder.SetActive(false);
+        iceHolder.SetActive(false);
+        fireHolder.SetActive(false);
+        electricPowerMax = 5;
+        electricPowerCurrent = electricPowerMax;
+        icePowerMax = 2;
+        icePowerCurrent = icePowerMax;
+        firePowerMax = 5;
+        firePowerCurrent = firePowerMax;
     }
 
     void Update()
@@ -56,6 +89,35 @@ public class PlayerController : MonoBehaviour
         Jump();
         Sprint();
         RotateCamera();
+        UpdateIcePower();
+        UpdateFirePower();
+        UpdateElectricPower();
+        if(!GroundCheck())
+        {
+            animator.SetBool("isJumpBase",true);
+        }
+        else
+        {
+            animator.SetBool("isJumpBase",false);
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawCube(transform.position - transform.up * maxDistance,boxSize);
+    }
+
+    bool GroundCheck()
+    {
+        if(Physics.BoxCast(transform.position, boxSize, -transform.up, transform.rotation, maxDistance, layerMask))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     //player movement
@@ -98,37 +160,116 @@ public class PlayerController : MonoBehaviour
         {
             playerVelocity.y += Physics.gravity.y * gravityScale * Time.deltaTime;
         }
-
-        characterController.Move(playerVelocity * Time.deltaTime);
-        if(Input.GetKeyDown(KeyCode.R) && !isElectric)
+        if(rotationNum == 1)
         {
             animator.SetBool("Electric", true);
-            isElectric = true;
-            electricIndicator.SetActive(true);
-            baseText.SetActive(false);
-            electricText.SetActive(true);
+            electricHolder.SetActive(true);
+            iceHolder.SetActive(false);
+            fireHolder.SetActive(false);
+            if(!electricPower)
+            {
+                if(electricPowerCurrent<electricPowerMax)
+                {
+                    electricPowerCurrent += Time.deltaTime;
+                }
+            }
+            else if(electricPower)
+            {
+                if(electricPowerCurrent>0)
+                {
+                    electricPowerCurrent -= Time.deltaTime;
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Z)&&!electricPower&&electricPowerCurrent>0)
+            {
+                animator.SetBool("ElectricPower", true);
+                electricPower = true;
+                moveSpeed = 0;
+                sprintSpeed = 0;
+            }
+            else if(electricPower&& Input.GetKeyDown(KeyCode.Z) || electricPowerCurrent<=0)
+            {
+                animator.SetBool("ElectricPower",false);
+                electricPower = false;
+                moveSpeed = 5f;
+                sprintSpeed = 8f;
+            }
         }
-        else if(Input.GetKeyDown(KeyCode.R) && isElectric)
+        else if(rotationNum == 2)
+        {
+            iceHolder.SetActive(true);
+            fireHolder.SetActive(false);
+            electricHolder.SetActive(false);
+            animator.SetBool("Ice",true);
+            animator.SetBool("Electric", false);
+            animator.SetBool("Fire",false);
+            if(icePowerCurrent<icePowerMax)
+            {
+                icePowerCurrent += Time.deltaTime;
+            }
+            if(!GroundCheck() && Input.GetKeyDown(KeyCode.Z) && icePowerCurrent >= 2)
+            {
+                animator.SetBool("Ice Ability",true);
+                characterController.Move(Vector3.down * moveSpeed * Time.deltaTime);
+                icePowerCurrent -= 2;
+            }
+        }
+        else if(rotationNum == 3)
+        {
+            fireHolder.SetActive(true);
+            iceHolder.SetActive(false);
+            electricHolder.SetActive(false);
+            animator.SetBool("Fire",true);
+            animator.SetBool("Ice",false);
+            animator.SetBool("Electric", false);
+            animator.SetBool("IceAbility",false);
+            if(!fireAbility)
+            {
+                if(firePowerCurrent<firePowerMax)
+                {
+                    firePowerCurrent += Time.deltaTime;
+                }
+            }
+            else if(fireAbility)
+            {
+                if(firePowerCurrent>0)
+                {
+                    firePowerCurrent -= Time.deltaTime;
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Z) && !fireAbility && firePowerCurrent>0)
+            {
+                animator.SetBool("StartRun",true);
+                animator.SetBool("FireTrigger",false);
+                moveSpeed = 8f;
+                fireAbility = true;
+            }
+            else if(Input.GetKeyDown(KeyCode.Z) && fireAbility || firePowerCurrent<=0)
+            {
+                fireAbility = false;
+                animator.SetBool("StopRun", true);
+                moveSpeed = 5f;
+            }
+        }
+        else
         {
             animator.SetBool("Electric",false);
-            isElectric = false;
-            electricIndicator.SetActive(false);
-            baseText.SetActive(true);
-            electricText.SetActive(false);
+            animator.SetBool("Fire",false);
+            animator.SetBool("Ice",false);
+            animator.SetBool("FireTrigger",false);
         }
-        if(isElectric && Input.GetKeyDown(KeyCode.Z)&&!electricPower)
+
+        characterController.Move(playerVelocity * Time.deltaTime);
+        if(Input.GetKeyDown(KeyCode.R))
         {
-            animator.SetBool("ElectricPower", true);
-            electricPower = true;
-            moveSpeed = 0;
-            sprintSpeed = 0;
-        }
-        else if(electricPower&& Input.GetKeyDown(KeyCode.Z))
-        {
-            animator.SetBool("ElectricPower",false);
-            electricPower = false;
-            moveSpeed = 5f;
-            sprintSpeed = 8f;
+            if(rotationNum == 3)
+            {
+                rotationNum = 0;
+            }
+            else
+            {
+                rotationNum++;
+            }
         }
         if(electricPower)
         {
@@ -234,9 +375,37 @@ public class PlayerController : MonoBehaviour
         {
             playerVelocity.y = 0f;
         }
-        if(Input.GetKey(KeyCode.X))
-        {
-            characterController.Move(Vector3.down * moveSpeed);
-        }
+    }
+
+    void StartRun()
+    {
+        animator.SetBool("FireAbility",true);
+        animator.SetBool("FireTrigger",false);
+    }
+
+    void StopRun()
+    {
+        animator.SetBool("FireTrigger", true);
+        animator.SetBool("StartRun",false);
+        animator.SetBool("FireAbility",false);
+        animator.SetBool("StopRun",false);
+    }
+
+    void recoverIce()
+    {
+        animator.SetBool("Ice Ability",false);
+    }
+
+    void UpdateElectricPower()
+    {
+        electricPowerBar.fillAmount = electricPowerCurrent/electricPowerMax;
+    }
+    void UpdateIcePower()
+    {
+        icePowerBar.fillAmount = icePowerCurrent/icePowerMax;
+    }
+    void UpdateFirePower()
+    {
+        firePowerBar.fillAmount = firePowerCurrent/firePowerMax;
     }
 }
