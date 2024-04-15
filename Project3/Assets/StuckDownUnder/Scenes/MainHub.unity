@@ -2880,6 +2880,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DOORFIRE
       objectReference: {fileID: 0}
+    - target: {fileID: 8398853186503530837, guid: bcafa8030c3b2db40999f6f2f7878f09,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398853186503530837, guid: bcafa8030c3b2db40999f6f2f7878f09,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.39
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13761,11 +13771,27 @@ MonoBehaviour:
   sprintRechargeRate: 10
   rotationCameraSpeed: 50
   rotationLagSpeed: 5
+  electricHolder: {fileID: 0}
+  iceHolder: {fileID: 0}
+  fireHolder: {fileID: 0}
+  electricPowerCurrent: 0
+  electricPowerMax: 0
+  icePowerCurrent: 0
+  icePowerMax: 0
+  firePowerCurrent: 0
+  firePowerMax: 0
+  electricPowerBar: {fileID: 0}
+  icePowerBar: {fileID: 0}
+  firePowerBar: {fileID: 0}
+  boxSize: {x: 0, y: 0, z: 0}
+  maxDistance: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   currentStamina: 0
   electricPower: 0
-  electricIndicator: {fileID: 0}
-  baseText: {fileID: 0}
-  electricText: {fileID: 0}
+  icePower: 0
+  firePower: 0
   cameraTransform: {fileID: 382173408}
   electricOrb: {fileID: 0}
 --- !u!1001 &1405057043
