@@ -58,7 +58,7 @@ MonoBehaviour:
     m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.4666667, g: 1, b: 0.7947988, a: 1}
+    m_Value: {r: 1, g: 0.75613904, b: 0.6273585, a: 1}
   maxFogDistance:
     m_OverrideState: 0
     m_Value: 5000
@@ -85,7 +85,7 @@ MonoBehaviour:
     m_Value: 1
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.43867922, g: 0.8993843, b: 1, a: 1}
+    m_Value: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
   globalLightProbeDimmer:
     m_OverrideState: 0
     m_Value: 1
