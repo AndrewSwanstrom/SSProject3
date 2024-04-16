@@ -48,13 +48,13 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _EmissiveIntensity: 10
+    - _EmissiveIntensity: 10000
     - _InvTilingScale: 1
     - _NormalScale: 1
     - _UseEmissiveIntensity: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 0.5962107, b: 0, a: 1}
     - _Color: {r: 1, g: 0.59621066, b: 0, a: 1}
-    - _EmissiveColor: {r: 10, g: 4.210385, b: 0, a: 10}
+    - _EmissiveColor: {r: 10000, g: 4210.385, b: 0, a: 10000}
     - _EmissiveColorLDR: {r: 1, g: 0.68073237, b: 0, a: 1}
   m_BuildTextureStacks: []
