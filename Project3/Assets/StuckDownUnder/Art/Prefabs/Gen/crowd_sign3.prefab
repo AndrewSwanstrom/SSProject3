@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4776650030497603150}
   - component: {fileID: 179846823530162393}
   - component: {fileID: 4334857347952619887}
+  - component: {fileID: 8707440551400851381}
   m_Layer: 0
   m_Name: crowd_sign3
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8707440551400851381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311004164218285193}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 69.6926, y: 81.10711, z: 355.04114}
+  m_Center: {x: 2.1630707, y: -9.572616, z: -127.52057}

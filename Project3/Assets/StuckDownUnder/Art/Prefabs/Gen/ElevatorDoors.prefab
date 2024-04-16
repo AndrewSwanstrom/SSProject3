@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2174099936932153034}
   - component: {fileID: 2236878674489563749}
   - component: {fileID: 5715154673436032467}
+  - component: {fileID: 5070105654604956242}
   m_Layer: 0
   m_Name: EleDoor1
   m_TagString: Untagged
@@ -83,6 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5070105654604956242
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776693883541669758}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 63.919678, y: 82.12613, z: 11.5477295}
+  m_Center: {x: -0.000011444092, y: -0.0000038146973, z: 0}
 --- !u!1 &1656779934121967200
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +149,7 @@ GameObject:
   - component: {fileID: 9210141945326107265}
   - component: {fileID: 8426094011029581752}
   - component: {fileID: 7720383676341808539}
+  - component: {fileID: 4139376215199241991}
   m_Layer: 0
   m_Name: EleDoor2
   m_TagString: Untagged
@@ -199,3 +222,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4139376215199241991
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843115121732135065}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 63.919678, y: 82.12613, z: 11.5477295}
+  m_Center: {x: -0.000011444092, y: -0.0000038146973, z: 0}
