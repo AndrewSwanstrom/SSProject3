@@ -5,16 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class IceEnter : MonoBehaviour
 {
+    public GameObject electricEnterText;
+    bool sceneEnter;
     // Start is called before the first frame update
     void Start()
     {
-        
+        electricEnterText.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(sceneEnter)
+        {
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                SceneManager.LoadScene(3);
+            }
+        }
     }
 
     // load the ice level from the main hub
@@ -22,7 +30,17 @@ public class IceEnter : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            SceneManager.LoadScene(3);
+            electricEnterText.SetActive(true);
+            sceneEnter = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            electricEnterText.SetActive(false);
+            sceneEnter = false;
         }
     }
 }

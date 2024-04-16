@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,11 +7,17 @@ public class SimpleChase : MonoBehaviour
 {
     private NavMeshAgent agent;
     public GameObject player;
+    public GameObject win;
+    Animator animator;
+    Vector2 lookDirection = new Vector2(1,0);
     public float EnemeyDistanceRun = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = 6.5f;
+        animator = GetComponent<Animator>();
+        win.SetActive(false);
     }
 
 
@@ -23,11 +28,22 @@ public class SimpleChase : MonoBehaviour
 
         if(distance<EnemeyDistanceRun)
         {
-            UnityEngine.Vector3 dirToPlayer = transform.position - player.transform.position;
+            Vector3 dirToPlayer = transform.position - player.transform.position;
+            animator.SetFloat("Look X", dirToPlayer.x);
+            animator.SetFloat("Look Y", dirToPlayer.y);
 
-            UnityEngine.Vector3 newPos = transform.position + dirToPlayer;
+            Vector3 newPos = transform.position + dirToPlayer;
 
             agent.SetDestination(newPos);
+        }
+
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            win.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

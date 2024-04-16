@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour
         icePowerCurrent = icePowerMax;
         firePowerMax = 5;
         firePowerCurrent = firePowerMax;
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -257,6 +258,9 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Fire",false);
             animator.SetBool("Ice",false);
             animator.SetBool("FireTrigger",false);
+            iceHolder.SetActive(false);
+            fireHolder.SetActive(false);
+            electricHolder.SetActive(false);
         }
 
         characterController.Move(playerVelocity * Time.deltaTime);

@@ -5,24 +5,43 @@ using UnityEngine.SceneManagement;
 
 public class FireExit : MonoBehaviour
 {
+    public GameObject electricEnterText;
+    bool sceneEnter;
     // Start is called before the first frame update
     void Start()
     {
-        
+        electricEnterText.SetActive(false);
+        sceneEnter = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(sceneEnter)
+        {
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                SceneManager.LoadScene(1);
+            }
+        }
     }
 
-    // loads the main hub from the fire level
+    //Load the Electric Level when the player enters the trigger
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            SceneManager.LoadScene(1);
+            electricEnterText.SetActive(true);
+            sceneEnter = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            electricEnterText.SetActive(false);
+            sceneEnter = false;
         }
     }
 }
