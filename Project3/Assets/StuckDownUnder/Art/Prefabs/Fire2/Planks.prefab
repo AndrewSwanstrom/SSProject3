@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3227666068993548525}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Planks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: plank (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336918733899746187, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1857277646100533553, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
         type: 3}
@@ -139,6 +144,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: plank (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1336918733899746187, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1857277646100533553, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -227,6 +237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: plank
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336918733899746187, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1857277646100533553, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
         type: 3}
@@ -317,6 +332,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: plank (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1336918733899746187, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1857277646100533553, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -406,6 +426,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: plank (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1336918733899746187, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1857277646100533553, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -494,6 +519,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: plank (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336918733899746187, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1857277646100533553, guid: e57fbb3f7d9aaa24b894eff216b89fbb,
         type: 3}
