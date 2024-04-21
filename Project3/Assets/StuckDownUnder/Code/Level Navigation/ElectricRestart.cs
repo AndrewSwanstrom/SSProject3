@@ -6,6 +6,9 @@ public class ElectricRestart : MonoBehaviour
 {
     CharacterController characterController;
     public GameObject gameOver;
+
+    public AudioClip deathSound;
+    PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class ElectricRestart : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            playerController = other.GetComponent<PlayerController>();
+            playerController.audioSource.PlayOneShot(deathSound);
             gameOver.SetActive(true);
             Time.timeScale = 0;
         }
