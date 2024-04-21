@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.026267178, g: 0.026450505, b: 0.022970516, a: 1}
+  m_IndirectSpecularColor: {r: 0.026289802, g: 0.026460152, b: 0.022972444, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19991,9 +19991,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1776193909115702576, guid: 511570da9db0806459c649de700c87e5,
         type: 3}
+      propertyPath: fireStart
+      value: 
+      objectReference: {fileID: 8300000, guid: a376049630c89d24b8269f3879a5730e, type: 3}
+    - target: {fileID: 1776193909115702576, guid: 511570da9db0806459c649de700c87e5,
+        type: 3}
       propertyPath: iceHolder
       value: 
       objectReference: {fileID: 1189029958}
+    - target: {fileID: 1776193909115702576, guid: 511570da9db0806459c649de700c87e5,
+        type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: aef74f58dbffd314cb86fd8b4ca61c2b, type: 3}
     - target: {fileID: 1776193909115702576, guid: 511570da9db0806459c649de700c87e5,
         type: 3}
       propertyPath: fireHolder
@@ -20028,6 +20038,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8156770073968883881, guid: 511570da9db0806459c649de700c87e5,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41192,6 +41207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: {fileID: 75872217}
+  deathSound: {fileID: 8300000, guid: 00807fc7c451a4f4c8fd25282cac3db9, type: 3}
 --- !u!43 &1359741966
 Mesh:
   m_ObjectHideFlags: 0

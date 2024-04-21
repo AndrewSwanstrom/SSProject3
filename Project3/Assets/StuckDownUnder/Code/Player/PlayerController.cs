@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour
     public float rotationCameraSpeed = 50f;
     public float rotationLagSpeed = 5f;
 
+    public AudioSource audioSource;
+    public AudioClip jumpSound;
+    public AudioClip fireStart;
+    public AudioClip fireEnd;
+
     public GameObject electricHolder;
     public GameObject iceHolder;
     public GameObject fireHolder;
@@ -81,6 +86,7 @@ public class PlayerController : MonoBehaviour
         firePowerMax = 5;
         firePowerCurrent = firePowerMax;
         Time.timeScale = 1;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -242,6 +248,7 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("StartRun",true);
                 animator.SetBool("FireTrigger",false);
+                audioSource.PlayOneShot(fireStart);
                 moveSpeed = 8f;
                 fireAbility = true;
             }
@@ -249,6 +256,7 @@ public class PlayerController : MonoBehaviour
             {
                 fireAbility = false;
                 animator.SetBool("StopRun", true);
+                audioSource.PlayOneShot(fireEnd);
                 moveSpeed = 5f;
             }
         }
@@ -322,6 +330,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && Input.GetKey(KeyCode.Space))
         {
             playerVelocity.y = jumpForce;
+            audioSource.PlayOneShot(jumpSound);
         }
     }
 
