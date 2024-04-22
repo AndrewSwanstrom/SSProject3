@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 541.8392, g: 807.4457, b: 1242.7635, a: 1}
+  m_IndirectSpecularColor: {r: 539.089, g: 804.9183, b: 1240.5822, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -95289,6 +95289,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &466398481175924193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1886815151378246659, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886815151378246659, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.715
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886815151378246659, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886815151378246659, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886815151378246659, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886815151378246659, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886815151378246659, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886815151378246659, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886815151378246659, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886815151378246659, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927432792773336722, guid: 972cad6a217a2fb4181f684e10b0a92e,
+        type: 3}
+      propertyPath: m_Name
+      value: IceParticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 972cad6a217a2fb4181f684e10b0a92e, type: 3}
 --- !u!1001 &578701239357247334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96323,3 +96391,4 @@ SceneRoots:
   - {fileID: 1908745920}
   - {fileID: 1023475008}
   - {fileID: 1287154799}
+  - {fileID: 466398481175924193}
