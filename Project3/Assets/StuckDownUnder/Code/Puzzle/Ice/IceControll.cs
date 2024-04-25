@@ -25,7 +25,7 @@ public class IceControll : MonoBehaviour
             //notification shows up
             notifyText.SetActive(true);
             //if press F the puzzle will begin
-            if(Input.GetKey(KeyCode.F))
+            if(Input.GetKey(KeyCode.F) || Input.GetButtonDown("Interact"))
             {
                 penguin.penguinMove = true;
             }

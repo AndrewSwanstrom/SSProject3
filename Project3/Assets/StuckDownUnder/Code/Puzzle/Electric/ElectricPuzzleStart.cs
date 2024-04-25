@@ -46,7 +46,7 @@ public class ElectricPuzzleStart : MonoBehaviour
         }
         if(activation)
         {
-            if(Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Interact"))
             {
                 solvePuzzle = true;
                 playerController.enabled = false;
@@ -54,7 +54,7 @@ public class ElectricPuzzleStart : MonoBehaviour
                 Objectives.SetActive(false);
                 Placeholders.SetActive(false);
             }
-            else if(Input.GetKeyDown(KeyCode.Escape))
+            else if(Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Back"))
             {
                 solvePuzzle = false;
                 playerController.enabled = true;

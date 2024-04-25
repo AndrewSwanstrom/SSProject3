@@ -42,7 +42,7 @@ public class Perri : MonoBehaviour
         RotatePlayer();
         if(canTalk)
         {
-            if(Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Interact"))
             {
                 PlayNote();
             }

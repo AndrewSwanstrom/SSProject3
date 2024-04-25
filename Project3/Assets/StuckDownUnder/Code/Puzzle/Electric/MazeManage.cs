@@ -58,7 +58,7 @@ public class MazeManage : MonoBehaviour
             previous = current;
             var cTag = current.tag;
             current.GetComponentInChildren<MeshRenderer>().material = highLight;
-            if(Input.GetKeyDown(KeyCode.R) && cTag!="End")
+            if(Input.GetKeyDown(KeyCode.F) && cTag!="End" || Input.GetButtonDown("Interact") && cTag!="End")
             {
                 current.transform.Rotate(0,90,0);
             }

@@ -20,7 +20,7 @@ public class IceExit : MonoBehaviour
     {
         if(sceneEnter)
         {
-            if(Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Interact"))
             {
                 SceneManager.LoadScene(1);
             }
