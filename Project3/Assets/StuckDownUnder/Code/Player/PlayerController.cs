@@ -327,7 +327,7 @@ public class PlayerController : MonoBehaviour
     //player jump ability
     void Jump()
     {
-        if (isGrounded && Input.GetKey(KeyCode.Space))
+        if (isGrounded && Input.GetKey(KeyCode.Space) || isGrounded && Input.GetButtonDown("Jump"))
         {
             playerVelocity.y = jumpForce;
             audioSource.PlayOneShot(jumpSound);
@@ -375,6 +375,13 @@ public class PlayerController : MonoBehaviour
         {
             rotationAngle = 0f;
         }
+
+        float horizontalInput = Input.GetAxis("RightJoystickHorizontal");
+        if (Mathf.Abs(horizontalInput) > 0.1f)
+        {
+            rotationAngle = horizontalInput * rotationCameraSpeed * Time.deltaTime;
+        }
+
         if (rotationAngle != 0f)
         {
             cameraTransform.RotateAround(transform.position, Vector3.up, rotationAngle);
