@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 536.76764, g: 621.62146, b: 570.9377, a: 1}
+  m_IndirectSpecularColor: {r: 536.4403, g: 621.11096, b: 570.2751, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8444,12 +8444,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4349950173660355517, guid: 6cea303661177c14aa4af908956a5dda,
     type: 3}
   m_PrefabInstance: {fileID: 1580871276}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &162224800 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7145992206194475801, guid: df686762cac108c47823eb5441697887,
-    type: 3}
-  m_PrefabInstance: {fileID: 1682530982}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &165029100
 GameObject:
@@ -28268,6 +28262,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8019727601970972137, guid: 5391d92481ea2294cb00b7812791eb5d,
     type: 3}
   m_PrefabInstance: {fileID: 546338737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &613270164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3051522731778531347, guid: df686762cac108c47823eb5441697887,
+    type: 3}
+  m_PrefabInstance: {fileID: 1682530982}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &619456254
 PrefabInstance:
@@ -77630,7 +77630,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 162224800}
+      objectReference: {fileID: 0}
     - target: {fileID: 263848534490574750, guid: df686762cac108c47823eb5441697887,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -77645,6 +77645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051522731778531347, guid: df686762cac108c47823eb5441697887,
+        type: 3}
+      propertyPath: m_Name
+      value: OptionsPanel
       objectReference: {fileID: 0}
     - target: {fileID: 3779085580049145637, guid: df686762cac108c47823eb5441697887,
         type: 3}
@@ -77662,6 +77667,46 @@ PrefabInstance:
 
         Simple Ground Pound: Jump + Z (Ice
         Ability)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941498012386842033, guid: df686762cac108c47823eb5441697887,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941498012386842033, guid: df686762cac108c47823eb5441697887,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941498012386842033, guid: df686762cac108c47823eb5441697887,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 613270164}
+    - target: {fileID: 3941498012386842033, guid: df686762cac108c47823eb5441697887,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941498012386842033, guid: df686762cac108c47823eb5441697887,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941498012386842033, guid: df686762cac108c47823eb5441697887,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941498012386842033, guid: df686762cac108c47823eb5441697887,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941498012386842033, guid: df686762cac108c47823eb5441697887,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5535847146549941364, guid: df686762cac108c47823eb5441697887,
         type: 3}
