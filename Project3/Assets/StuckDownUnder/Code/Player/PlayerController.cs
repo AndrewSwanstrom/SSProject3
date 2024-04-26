@@ -5,9 +5,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    static bool fireWin;
+    public static bool iceWin;
+    static bool electricWin;
+    public static bool firstTimeIce = false;
     public float moveSpeed = 5f;
     public float sprintSpeed = 8f;
     public float rotationSpeed = 600f;
@@ -18,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public float sprintRechargeRate = 10f;
     public float rotationCameraSpeed = 50f;
     public float rotationLagSpeed = 5f;
+    public bool icePuzzle = false;
 
     public AudioSource audioSource;
     public AudioClip jumpSound;
@@ -68,6 +74,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        icePuzzle = false;
         characterController = GetComponent<CharacterController>();
         currentStamina = maxStamina;
         animator = GetComponent<Animator>();
@@ -204,6 +211,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(rotationNum == 2)
         {
+            Scene scene = SceneManager.GetActiveScene();
             iceHolder.SetActive(true);
             fireHolder.SetActive(false);
             electricHolder.SetActive(false);
@@ -219,6 +227,10 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("Ice Ability",true);
                 characterController.Move(Vector3.down * moveSpeed * Time.deltaTime);
                 icePowerCurrent -= 2;
+                if(scene.name == "IceLevel")
+                {
+                    icePuzzle = true;
+                }
             }
         }
         else if(rotationNum == 3)

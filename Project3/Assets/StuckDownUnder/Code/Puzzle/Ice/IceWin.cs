@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 
-public class HitBox : MonoBehaviour
+public class IceWin : MonoBehaviour
 {
-    Penguin penguin;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +18,10 @@ public class HitBox : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
+        if(other.tag == "Penguin")
+        {
+            other.gameObject.SetActive(false);
+            PlayerController.iceWin = true;
+        }
     }
 }

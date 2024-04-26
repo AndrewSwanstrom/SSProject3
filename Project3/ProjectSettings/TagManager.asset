@@ -14,6 +14,9 @@ TagManager:
   - ConsoleTrigger
   - Buzzer
   - Orb
+  - IceController
+  - IceManager
+  - IceCube
   layers:
   - Default
   - TransparentFX
