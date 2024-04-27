@@ -66,7 +66,7 @@ Material:
     m_Floats:
     - _EmissiveIntensity: 25000
     - _InvTilingScale: 1
-    - _UseEmissiveIntensity: 1
+    - _UseEmissiveIntensity: 0
     m_Colors:
     - _BaseColor: {r: 0, g: 0.73333335, b: 1, a: 1}
     - _Color: {r: 0, g: 0.7333333, b: 1, a: 1}
