@@ -21,6 +21,10 @@ public class Penguin : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         icePuzzleManage = iceManager.GetComponent<IcePuzzleManage>();
         penguinMove = false;
+        if(PlayerController.iceWin)
+        {
+            this.gameObject.SetActive(false);
+        }
         animator = GetComponent<Animator>();
         if(PlayerController.iceWin)
         {

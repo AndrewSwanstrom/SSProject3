@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public static bool iceWin;
     static bool electricWin;
     public static bool firstTimeIce = false;
+    public static bool firstTimeElectric = false;
     public float moveSpeed = 5f;
     public float sprintSpeed = 8f;
     public float rotationSpeed = 600f;

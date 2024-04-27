@@ -21,6 +21,8 @@ public class ElectricPuzzleStart : MonoBehaviour
     MazeManage mazeManage;
     public bool startTheCog = false;
     public GameObject CrankSound;
+    AudioSource audioSource;
+    public AudioClip audioClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,12 @@ public class ElectricPuzzleStart : MonoBehaviour
         mazeManage = maze.GetComponent<MazeManage>();
         startTheCog = false;
         CrankSound.SetActive(false);
+        audioSource = player.GetComponent<AudioSource>();
+        if(!PlayerController.firstTimeElectric)
+        {
+            audioSource.PlayOneShot(audioClip);
+            PlayerController.firstTimeElectric = true;
+        }
     }
 
     // Update is called once per frame
