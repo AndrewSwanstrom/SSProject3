@@ -39,6 +39,9 @@ public class Pause : MonoBehaviour
 
     public void GameEnd()
     {
-        SceneManager.LoadScene(0);
+        if(!CheatManager.perma)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

@@ -9,11 +9,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    static bool fireWin;
+    public static bool fireWin;
     public static bool iceWin;
-    static bool electricWin;
+    public static bool electricWin;
     public static bool firstTimeIce = false;
     public static bool firstTimeElectric = false;
+    public static bool iceTutorial = false;
     public float moveSpeed = 5f;
     public float sprintSpeed = 8f;
     public float rotationSpeed = 600f;
@@ -190,7 +191,7 @@ public class PlayerController : MonoBehaviour
             }
             else if(electricPower)
             {
-                if(electricPowerCurrent>0)
+                if(electricPowerCurrent>0 && !CheatManager.charge)
                 {
                     electricPowerCurrent -= Time.deltaTime;
                 }
@@ -227,10 +228,17 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("Ice Ability",true);
                 characterController.Move(Vector3.down * moveSpeed * Time.deltaTime);
-                icePowerCurrent -= 2;
+                if(!CheatManager.charge)
+                {
+                    icePowerCurrent -= 2;
+                }
                 if(scene.name == "IceLevel")
                 {
                     icePuzzle = true;
+                }
+                if(scene.name == "MainHub")
+                {
+                    PlayerController.iceTutorial = true;
                 }
             }
         }
@@ -252,7 +260,7 @@ public class PlayerController : MonoBehaviour
             }
             else if(fireAbility)
             {
-                if(firePowerCurrent>0)
+                if(firePowerCurrent>0 && !CheatManager.charge)
                 {
                     firePowerCurrent -= Time.deltaTime;
                 }

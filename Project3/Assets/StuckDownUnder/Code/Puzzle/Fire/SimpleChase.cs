@@ -32,6 +32,10 @@ public class SimpleChase : MonoBehaviour
         agent.speed = 5f;
         animator = GetComponent<Animator>();
         win.SetActive(false);
+        if(PlayerController.fireWin)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
 
@@ -270,8 +274,8 @@ public class SimpleChase : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            win.SetActive(true);
-            Time.timeScale = 0;
+            PlayerController.fireWin = true;
+            this.gameObject.SetActive(false);
         }
     }
 }

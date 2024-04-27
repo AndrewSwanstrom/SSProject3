@@ -52,7 +52,7 @@ public class ElectricPuzzleStart : MonoBehaviour
         {
             StartCoroutine(SwitchCamera());
         }
-        if(activation)
+        if(!PlayerController.electricWin && activation)
         {
             if(Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Interact"))
             {
@@ -114,7 +114,6 @@ public class ElectricPuzzleStart : MonoBehaviour
      yield return new WaitForSeconds(5f);
      cam1.enabled = true;
      cam3.enabled = false;
-     winScreen.SetActive(true);
-     Time.timeScale = 0;
+     PlayerController.electricWin = true;
 }
 }
