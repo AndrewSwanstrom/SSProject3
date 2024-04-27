@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8152040667415982416}
   - component: {fileID: 3909067514822336745}
   - component: {fileID: 8012317871549681824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: iceCube (40)
   m_TagString: IceCube
   m_Icon: {fileID: 0}

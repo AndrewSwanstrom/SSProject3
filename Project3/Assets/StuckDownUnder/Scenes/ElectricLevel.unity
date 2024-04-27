@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.026237166, g: 0.026426896, b: 0.02295583, a: 1}
+  m_IndirectSpecularColor: {r: 0.026244154, g: 0.0264383, b: 0.022968622, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -44827,6 +44827,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PuzzleText 1 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498974143641867684, guid: a14b65f050a977641bbe5f5fb4517e77,
+        type: 3}
+      propertyPath: m_text
+      value: 'Press WASD to choose circuit
+
+        Press [F] to rotate
+
+        Press
+        [ESC] to exit'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinBox : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class WinBox : MonoBehaviour
     public GameObject ice;
     public GameObject electric;
     public GameObject isTime;
+    public GameObject winScreen;
+    public bool isDone = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +18,21 @@ public class WinBox : MonoBehaviour
         ice.SetActive(false);
         electric.SetActive(false);
         isTime.SetActive(false);
+        winScreen.SetActive(false);
+        isDone = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(isDone)
+        {
+                if(Input.GetKeyDown(KeyCode.F))
+                {
+                    isTime.SetActive(true);
+                    winScreen.SetActive(true);
+                }
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -42,6 +54,7 @@ public class WinBox : MonoBehaviour
             if(PlayerController.electricWin && PlayerController.iceWin && PlayerController.fireWin)
             {
                 isTime.SetActive(true);
+                isDone = true;
             }
         }
     }
@@ -53,7 +66,8 @@ public class WinBox : MonoBehaviour
             fire.SetActive(false);
             ice.SetActive(false);
             electric.SetActive(false);
-            isTime.SetActive(false); 
+            isTime.SetActive(false);
+            isDone = false;
         }
     }
 }
