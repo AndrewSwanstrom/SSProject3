@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour
     public static bool fireWin;
     public static bool iceWin;
     public static bool electricWin;
+    public static int levelWins = 0;
     public static bool firstTimeIce = false;
     public static bool firstTimeElectric = false;
+    public static bool firstTimeFire = false;
     public static bool iceTutorial = false;
     public static bool electricInsane = false;
     public static bool iceInsane = false;
@@ -56,6 +58,9 @@ public class PlayerController : MonoBehaviour
     public Vector3 boxSize;
     public float maxDistance;
     public LayerMask layerMask;
+
+    public static int levels_beaten = 0;
+    public static int abilities_held = 0;
 
     Animator animator;
 
@@ -186,6 +191,8 @@ public class PlayerController : MonoBehaviour
         if(PlayerController.rotationMax[1] == 1)
         {
             animator.SetBool("Electric", true);
+            animator.SetBool("Ice",false);
+            animator.SetBool("Fire",false);
             electricHolder.SetActive(true);
             iceHolder.SetActive(false);
             fireHolder.SetActive(false);

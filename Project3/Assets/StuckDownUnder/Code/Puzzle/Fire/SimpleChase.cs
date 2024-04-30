@@ -32,7 +32,7 @@ public class SimpleChase : MonoBehaviour
         agent.speed = 5f;
         animator = GetComponent<Animator>();
         win.SetActive(false);
-        if(PlayerController.fireWin)
+        if(PlayerController.fireWin || PlayerController.rotationMax[3] != 3)
         {
             this.gameObject.SetActive(false);
         }
@@ -275,6 +275,7 @@ public class SimpleChase : MonoBehaviour
         if(other.tag == "Player")
         {
             PlayerController.fireWin = true;
+            PlayerController.levelWins++;
             this.gameObject.SetActive(false);
         }
     }

@@ -115,5 +115,6 @@ public class ElectricPuzzleStart : MonoBehaviour
      cam1.enabled = true;
      cam3.enabled = false;
      PlayerController.electricWin = true;
+     PlayerController.levelWins++;
 }
 }

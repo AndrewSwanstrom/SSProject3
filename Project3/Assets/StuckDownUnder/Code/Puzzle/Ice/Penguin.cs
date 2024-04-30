@@ -21,15 +21,11 @@ public class Penguin : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         icePuzzleManage = iceManager.GetComponent<IcePuzzleManage>();
         penguinMove = false;
-        if(PlayerController.iceWin)
+        if(PlayerController.iceWin || PlayerController.rotationMax[2] != 2)
         {
             this.gameObject.SetActive(false);
         }
         animator = GetComponent<Animator>();
-        if(PlayerController.iceWin)
-        {
-            this.gameObject.SetActive(false);
-        }
     }
 
     // Update is called once per frame

@@ -22,6 +22,7 @@ public class IceWin : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             PlayerController.iceWin = true;
+            PlayerController.levelWins++;
         }
     }
 }
