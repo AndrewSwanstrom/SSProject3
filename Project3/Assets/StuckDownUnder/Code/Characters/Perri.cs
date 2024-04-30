@@ -61,7 +61,7 @@ public class Perri : MonoBehaviour
         }
         if(perriItems)
         {
-            if(Input.GetKeyDown(KeyCode.Z))
+            if(Input.GetKeyDown(KeyCode.V))
             {
                 if(PlayerController.electricWin)
                 {
@@ -75,6 +75,9 @@ public class Perri : MonoBehaviour
                     PlayerController.rotationMax[3] = 0;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane = true;
+                    PlayerController.fireInsane = false;
+                    PlayerController.iceInsane = false;
                 }
                 else if(PlayerController.abilities_held ==1 && !PlayerController.iceWin && !PlayerController.fireWin && !PlayerController.electricWin && PlayerController.rotationMax[1] != 1)
                 {
@@ -84,6 +87,9 @@ public class Perri : MonoBehaviour
                     PlayerController.rotationMax[3] = 0;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane = true;
+                    PlayerController.fireInsane = false;
+                    PlayerController.iceInsane = false;
                 }
                 else if(PlayerController.abilities_held ==1 && !PlayerController.electricWin && PlayerController.levelWins == 1)
                 {
@@ -91,6 +97,7 @@ public class Perri : MonoBehaviour
                     PlayerController.abilities_held = 2;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane = true;
                 }
                 else if(PlayerController.abilities_held == 2 && !PlayerController.electricWin && PlayerController.levelWins == 2 && PlayerController.fireWin && PlayerController.iceWin)
                 {
@@ -98,6 +105,7 @@ public class Perri : MonoBehaviour
                     PlayerController.abilities_held = 3;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane = true;
                 }
                 else if(PlayerController.abilities_held == 2 && !PlayerController.electricWin && PlayerController.levelWins == 1 && PlayerController.fireWin)
                 {
@@ -106,6 +114,8 @@ public class Perri : MonoBehaviour
                     PlayerController.rotationMax[2] = 0;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane = true;
+                    PlayerController.iceInsane = false;
                 }
                 else if(PlayerController.abilities_held == 2 && !PlayerController.electricWin && PlayerController.levelWins == 1 && PlayerController.iceWin)
                 {
@@ -114,6 +124,8 @@ public class Perri : MonoBehaviour
                     PlayerController.rotationMax[3] = 0;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane = true;
+                    PlayerController.fireInsane = false;
                 }
             }
             else if(Input.GetKeyDown(KeyCode.X))
@@ -130,6 +142,9 @@ public class Perri : MonoBehaviour
                     PlayerController.rotationMax[3] = 0;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane = false;
+                    PlayerController.fireInsane = false;
+                    PlayerController.iceInsane = true;
                 }
                 else if(PlayerController.abilities_held ==1 && !PlayerController.iceWin && !PlayerController.fireWin && !PlayerController.electricWin && PlayerController.rotationMax[2] != 2)
                 {
@@ -139,6 +154,9 @@ public class Perri : MonoBehaviour
                     PlayerController.rotationMax[3] = 0;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane= false;
+                    PlayerController.fireInsane = false;
+                    PlayerController.iceInsane = true;
                 }
                 else if(PlayerController.abilities_held ==1 && !PlayerController.iceWin && PlayerController.levelWins == 1)
                 {
@@ -146,6 +164,7 @@ public class Perri : MonoBehaviour
                     PlayerController.abilities_held = 2;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.iceInsane = true;
                 }
                 else if(PlayerController.abilities_held == 2 && !PlayerController.iceWin && PlayerController.levelWins == 2 && PlayerController.fireWin && PlayerController.electricWin)
                 {
@@ -153,22 +172,27 @@ public class Perri : MonoBehaviour
                     PlayerController.abilities_held = 3;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.iceInsane = true;
                 }
                 else if(PlayerController.abilities_held == 2 && !PlayerController.iceWin && PlayerController.levelWins == 1 && PlayerController.fireWin)
-                {
-                    PlayerController.rotationMax[2] = 2;
-                    PlayerController.abilities_held = 2;
-                    PlayerController.rotationMax[3] = 0;
-                    audioSource.clip = hereYouGo;
-                    audioSource.Play();
-                }
-                else if(PlayerController.abilities_held == 2 && !PlayerController.iceWin && PlayerController.levelWins == 1 && PlayerController.electricWin)
                 {
                     PlayerController.rotationMax[2] = 2;
                     PlayerController.abilities_held = 2;
                     PlayerController.rotationMax[1] = 0;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane = false;
+                    PlayerController.iceInsane = true;
+                }
+                else if(PlayerController.abilities_held == 2 && !PlayerController.iceWin && PlayerController.levelWins == 1 && PlayerController.electricWin)
+                {
+                    PlayerController.rotationMax[2] = 2;
+                    PlayerController.abilities_held = 2;
+                    PlayerController.rotationMax[3] = 0;
+                    audioSource.clip = hereYouGo;
+                    audioSource.Play();
+                    PlayerController.fireInsane = false;
+                    PlayerController.iceInsane = true;
                 }
                 
             }
@@ -186,6 +210,9 @@ public class Perri : MonoBehaviour
                     PlayerController.rotationMax[2] = 0;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane = false;
+                    PlayerController.fireInsane = true;
+                    PlayerController.iceInsane = false;
                 }
                 else if(PlayerController.abilities_held ==1 && !PlayerController.fireWin && !PlayerController.iceWin && !PlayerController.electricWin && PlayerController.rotationMax[3] != 3)
                 {
@@ -195,6 +222,9 @@ public class Perri : MonoBehaviour
                     PlayerController.rotationMax[2] = 0;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.electricInsane = false;
+                    PlayerController.fireInsane = true;
+                    PlayerController.iceInsane = false;
                 }
                 else if(PlayerController.abilities_held ==1 && !PlayerController.fireWin && PlayerController.levelWins == 1)
                 {
@@ -202,6 +232,7 @@ public class Perri : MonoBehaviour
                     PlayerController.abilities_held = 2;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.fireInsane = true;
                 }
                 else if(PlayerController.abilities_held == 2 && !PlayerController.fireWin && PlayerController.levelWins == 2 && PlayerController.iceWin && PlayerController.electricWin)
                 {
@@ -209,22 +240,27 @@ public class Perri : MonoBehaviour
                     PlayerController.abilities_held = 3;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.fireInsane= true;
                 }
                 else if(PlayerController.abilities_held == 2 && !PlayerController.fireWin && PlayerController.levelWins == 1 && PlayerController.iceWin)
-                {
-                    PlayerController.rotationMax[3] = 3;
-                    PlayerController.abilities_held = 2;
-                    PlayerController.rotationMax[2] = 0;
-                    audioSource.clip = hereYouGo;
-                    audioSource.Play();
-                }
-                else if(PlayerController.abilities_held == 2 && !PlayerController.fireWin && PlayerController.levelWins == 1 && PlayerController.electricWin)
                 {
                     PlayerController.rotationMax[3] = 3;
                     PlayerController.abilities_held = 2;
                     PlayerController.rotationMax[1] = 0;
                     audioSource.clip = hereYouGo;
                     audioSource.Play();
+                    PlayerController.fireInsane = true;
+                    PlayerController.electricInsane = false;
+                }
+                else if(PlayerController.abilities_held == 2 && !PlayerController.fireWin && PlayerController.levelWins == 1 && PlayerController.electricWin)
+                {
+                    PlayerController.rotationMax[3] = 3;
+                    PlayerController.abilities_held = 2;
+                    PlayerController.rotationMax[2] = 0;
+                    audioSource.clip = hereYouGo;
+                    audioSource.Play();
+                    PlayerController.fireInsane = true;
+                    PlayerController.iceInsane = false;
                 }
             }
             }

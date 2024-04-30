@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 539.72485, g: 805.4388, b: 1241.1439, a: 1}
+  m_IndirectSpecularColor: {r: 539.40845, g: 804.69324, b: 1239.5021, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -279394,6 +279394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1847479397}
+  - component: {fileID: 1847479398}
   m_Layer: 0
   m_Name: Aiden_Voice_Controller
   m_TagString: Untagged
@@ -279416,6 +279417,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847479398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847479396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4bfc1dc326b5c439cf08f2cd55257d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Aiden: {fileID: 1947675540}
+  aidenSpeech: {fileID: 8300000, guid: a6d1072c35a494a4588af3ec0e27f786, type: 3}
+  AnklesGone: {fileID: 8300000, guid: 20923f409cb67384cbbdbd77f85fdf93, type: 3}
+  KindaSlow: {fileID: 8300000, guid: 88542fe647bb56a418b6318ecc3b90c9, type: 3}
+  Annoying: {fileID: 8300000, guid: 62bd05d26ed12cb429d197a47a577215, type: 3}
+  player: {fileID: 2372629943173722607}
+  cockBlocker: {fileID: 187994315}
+  index: 0
 --- !u!1001 &1847698585
 PrefabInstance:
   m_ObjectHideFlags: 0

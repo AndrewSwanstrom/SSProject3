@@ -84,13 +84,11 @@ public class SimpleChase : MonoBehaviour
                 animator.SetFloat("LookX",1);
                 animator.SetFloat("LookY",0);
             }
-            Debug.Log(dir);
         }
         else if(index == 1)
         {
             agent.SetDestination(destination_2.transform.position);
             Vector3 dir = (destination_2.transform.position - agent.transform.position).normalized;
-            Debug.Log(dir);
             if(dir.x>0)
             {
                 animator.SetFloat("LookX",0);
@@ -116,7 +114,6 @@ public class SimpleChase : MonoBehaviour
         {
             agent.SetDestination(destination_3.transform.position);
             Vector3 dir = (destination_3.transform.position - agent.transform.position).normalized;
-            Debug.Log(dir);
             if(dir.x>0)
             {
                 animator.SetFloat("LookX",0);
@@ -142,7 +139,6 @@ public class SimpleChase : MonoBehaviour
         {
             agent.SetDestination(destination_4.transform.position);
             Vector3 dir = (destination_4.transform.position - agent.transform.position).normalized;
-            Debug.Log(dir);
             if(dir.x>0)
             {
                 animator.SetFloat("LookX",0);
@@ -168,7 +164,6 @@ public class SimpleChase : MonoBehaviour
         {
             agent.SetDestination(destination_5.transform.position);
             Vector3 dir = (destination_5.transform.position - agent.transform.position).normalized;
-            Debug.Log(dir);
             if(dir.x>0)
             {
                 animator.SetFloat("LookX",0);
@@ -194,7 +189,6 @@ public class SimpleChase : MonoBehaviour
         {
             agent.SetDestination(destination_6.transform.position);
             Vector3 dir = (destination_6.transform.position - agent.transform.position).normalized;
-            Debug.Log(dir);
             if(dir.x>0)
             {
                 animator.SetFloat("LookX",0);
@@ -220,7 +214,6 @@ public class SimpleChase : MonoBehaviour
         {
             agent.SetDestination(destination_7.transform.position);
             Vector3 dir = (destination_7.transform.position - agent.transform.position).normalized;
-            Debug.Log(dir);
             if(dir.x>0)
             {
                 animator.SetFloat("LookX",0);
@@ -246,7 +239,6 @@ public class SimpleChase : MonoBehaviour
         {
             agent.SetDestination(destination_8.transform.position);
             Vector3 dir = (destination_8.transform.position - agent.transform.position).normalized;
-            Debug.Log(dir);
             if(dir.x>0)
             {
                 animator.SetFloat("LookX",0);
@@ -273,6 +265,12 @@ public class SimpleChase : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
+        {
+            PlayerController.fireWin = true;
+            PlayerController.levelWins++;
+            this.gameObject.SetActive(false);
+        }
+        else if(other.tag == "Orb" && !CheatManager.staticLevel)
         {
             PlayerController.fireWin = true;
             PlayerController.levelWins++;

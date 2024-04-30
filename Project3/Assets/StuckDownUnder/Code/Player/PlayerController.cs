@@ -151,6 +151,18 @@ public class PlayerController : MonoBehaviour
     //player movement
     void MovePlayer()
     {
+        if(rotationNum == 1 && rotationMax[1] != 1)
+        {
+            rotationNum = 0;
+        }
+        else if(rotationNum == 2 && rotationMax[2] !=2)
+        {
+            rotationNum = 0;
+        }
+        else if(rotationNum == 3 && rotationMax[3] !=3)
+        {
+            rotationNum = 0;
+        }
         Vector3 cameraEulerAngles = cameraTransform.eulerAngles;
         cameraEulerAngles.x = 0f;
         cameraEulerAngles.z = 0f;
@@ -188,7 +200,7 @@ public class PlayerController : MonoBehaviour
         {
             playerVelocity.y += Physics.gravity.y * gravityScale * Time.deltaTime;
         }
-        if(PlayerController.rotationMax[1] == 1)
+        if(rotationNum == 1)
         {
             animator.SetBool("Electric", true);
             animator.SetBool("Ice",false);
@@ -225,7 +237,7 @@ public class PlayerController : MonoBehaviour
                 sprintSpeed = 8f;
             }
         }
-        else if(PlayerController.rotationMax[2] == 2)
+        else if(rotationNum == 2)
         {
             Scene scene = SceneManager.GetActiveScene();
             iceHolder.SetActive(true);
@@ -256,7 +268,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        else if(PlayerController.rotationMax[3] == 3)
+        else if(rotationNum == 3)
         {
             fireHolder.SetActive(true);
             iceHolder.SetActive(false);
@@ -309,17 +321,37 @@ public class PlayerController : MonoBehaviour
         characterController.Move(playerVelocity * Time.deltaTime);
         if(Input.GetKeyDown(KeyCode.R))
         {
-            if(rotationNum == rotationMax[0] && PlayerController.electricAbility)
+            if(rotationNum == rotationMax[0] && PlayerController.electricInsane)
             {
                 rotationNum = 1;
             }
-            else if(rotationNum == rotationMax[1] && PlayerController.iceAbility)
+            else if(rotationNum == rotationMax[0] && !PlayerController.electricInsane && PlayerController.iceInsane)
             {
                 rotationNum = 2;
             }
-            else if(rotationNum == rotationMax[2] && PlayerController.fireAbility)
+            else if(rotationNum == rotationMax[0] && !PlayerController.electricInsane && !PlayerController.iceInsane && PlayerController.fireInsane)
             {
                 rotationNum = 3;
+            }
+            else if(rotationNum == rotationMax[1] && PlayerController.iceInsane)
+            {
+                rotationNum = 2;
+            }
+            else if(rotationNum == rotationMax[1] && !PlayerController.iceInsane && !PlayerController.fireInsane)
+            {
+                rotationNum = 0;
+            }
+            else if(rotationNum == rotationMax[1] && !PlayerController.iceInsane && PlayerController.fireInsane)
+            {
+                rotationNum = 3;
+            }
+            else if(rotationNum == rotationMax[2] && PlayerController.fireInsane)
+            {
+                rotationNum = 3;
+            }
+            else if(rotationNum == rotationMax[2] && !PlayerController.fireInsane)
+            {
+                rotationNum = 0;
             }
             else if(rotationNum == rotationMax[3])
             {
