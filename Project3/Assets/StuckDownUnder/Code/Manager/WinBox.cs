@@ -30,7 +30,7 @@ public class WinBox : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.F))
                 {
                     isTime.SetActive(true);
-                    winScreen.SetActive(true);
+                SceneManager.LoadScene(5);
                 }
         }
     }

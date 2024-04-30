@@ -13,8 +13,8 @@ public class ProblemFixer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(PlayerController.rotationMax[1]);
-        Debug.Log(PlayerController.rotationMax[2]);
-        Debug.Log(PlayerController.rotationMax[3]);
+        //Debug.Log(PlayerController.rotationMax[1]);
+        //Debug.Log(PlayerController.rotationMax[2]);
+        //Debug.Log(PlayerController.rotationMax[3]);
     }
 }

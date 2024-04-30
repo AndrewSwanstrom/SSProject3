@@ -47,6 +47,39 @@ public class Perri : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(PlayerController.levelWins);
+        if(PlayerController.iceWin && PlayerController.fireWin && PlayerController.electricWin)
+        {
+            PlayerController.levelWins = 3;
+        }
+        else if(PlayerController.iceWin && PlayerController.electricWin && !PlayerController.fireWin)
+        {
+            PlayerController.levelWins = 2;
+        }
+        else if(PlayerController.iceWin && PlayerController.fireWin && !PlayerController.electricWin)
+        {
+            PlayerController.levelWins = 2;
+        }
+        else if(PlayerController.electricWin && PlayerController.fireWin && !PlayerController.iceWin)
+        {
+            PlayerController.levelWins = 2;
+        }
+        else if(PlayerController.electricWin && !PlayerController.fireWin && !PlayerController.iceWin)
+        {
+            PlayerController.levelWins = 1;
+        }
+        else if(PlayerController.iceWin && !PlayerController.electricWin && !PlayerController.fireWin)
+        {
+            PlayerController.levelWins = 1;
+        }
+        else if(PlayerController.fireWin && !PlayerController.electricWin && !PlayerController.iceWin)
+        {
+            PlayerController.levelWins = 1;
+        }
+        else if(!PlayerController.fireWin && !PlayerController.iceWin && !PlayerController.electricWin)
+        {
+            PlayerController.levelWins = 0;
+        }
         RotatePlayer();
         if(canTalk)
         {
