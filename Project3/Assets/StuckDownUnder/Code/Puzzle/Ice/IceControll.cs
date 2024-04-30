@@ -39,7 +39,7 @@ public class IceControll : MonoBehaviour
     void Update()
     {
         // if player is in range of the mechanic
-        if(playerRange)
+        if(playerRange && GameObject.FindWithTag("Destructable") == null && PlayerController.iceInsane)
         {
             //notification shows up
             //if press F the puzzle will begin
@@ -51,7 +51,7 @@ public class IceControll : MonoBehaviour
                 notifyText.SetActive(false);
 
             }
-            else if(Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Back"))
+            else if(Input.GetKeyDown(KeyCode.C) || Input.GetButtonDown("Back"))
             {
                 solvePuzzle = false;
                 playerController.enabled = true;

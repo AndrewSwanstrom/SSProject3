@@ -17,6 +17,7 @@ TagManager:
   - IceController
   - IceManager
   - IceCube
+  - Destructable
   layers:
   - Default
   - TransparentFX

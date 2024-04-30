@@ -52,7 +52,7 @@ public class ElectricPuzzleStart : MonoBehaviour
         {
             StartCoroutine(SwitchCamera());
         }
-        if(!PlayerController.electricWin && activation)
+        if(!PlayerController.electricWin && activation && PlayerController.electricInsane && GameObject.FindWithTag("Destructable") == null)
         {
             if(Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("Interact"))
             {
@@ -62,7 +62,7 @@ public class ElectricPuzzleStart : MonoBehaviour
                 Objectives.SetActive(false);
                 Placeholders.SetActive(false);
             }
-            else if(Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Back"))
+            else if(Input.GetKeyDown(KeyCode.C) || Input.GetButtonDown("Back"))
             {
                 solvePuzzle = false;
                 playerController.enabled = true;
