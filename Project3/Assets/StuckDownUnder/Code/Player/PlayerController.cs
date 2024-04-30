@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     public static bool firstTimeIce = false;
     public static bool firstTimeElectric = false;
     public static bool iceTutorial = false;
+    public static bool electricInsane = false;
+    public static bool iceInsane = false;
+    public static bool fireInsane = false;
     public float moveSpeed = 5f;
     public float sprintSpeed = 8f;
     public float rotationSpeed = 600f;
@@ -26,6 +29,10 @@ public class PlayerController : MonoBehaviour
     public float rotationCameraSpeed = 50f;
     public float rotationLagSpeed = 5f;
     public bool icePuzzle = false;
+
+    public static bool iceAbility = false;
+    public static bool fireAbility = false;
+    public static bool electricAbility = false;
 
     public AudioSource audioSource;
     public AudioClip jumpSound;
@@ -69,10 +76,10 @@ public class PlayerController : MonoBehaviour
     public GameObject electricOrb;
     private float amount = 5f;
 
-    bool fireAbility;
-
     string[] abilities;
     int rotationNum;
+
+    public static int [] rotationMax = new int[4];
 
     void Start()
     {
@@ -176,7 +183,7 @@ public class PlayerController : MonoBehaviour
         {
             playerVelocity.y += Physics.gravity.y * gravityScale * Time.deltaTime;
         }
-        if(rotationNum == 1)
+        if(PlayerController.rotationMax[1] == 1)
         {
             animator.SetBool("Electric", true);
             electricHolder.SetActive(true);
@@ -211,7 +218,7 @@ public class PlayerController : MonoBehaviour
                 sprintSpeed = 8f;
             }
         }
-        else if(rotationNum == 2)
+        else if(PlayerController.rotationMax[2] == 2)
         {
             Scene scene = SceneManager.GetActiveScene();
             iceHolder.SetActive(true);
@@ -242,7 +249,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        else if(rotationNum == 3)
+        else if(PlayerController.rotationMax[3] == 3)
         {
             fireHolder.SetActive(true);
             iceHolder.SetActive(false);
@@ -295,13 +302,21 @@ public class PlayerController : MonoBehaviour
         characterController.Move(playerVelocity * Time.deltaTime);
         if(Input.GetKeyDown(KeyCode.R))
         {
-            if(rotationNum == 3)
+            if(rotationNum == rotationMax[0] && PlayerController.electricAbility)
+            {
+                rotationNum = 1;
+            }
+            else if(rotationNum == rotationMax[1] && PlayerController.iceAbility)
+            {
+                rotationNum = 2;
+            }
+            else if(rotationNum == rotationMax[2] && PlayerController.fireAbility)
+            {
+                rotationNum = 3;
+            }
+            else if(rotationNum == rotationMax[3])
             {
                 rotationNum = 0;
-            }
-            else
-            {
-                rotationNum++;
             }
         }
         if(electricPower)

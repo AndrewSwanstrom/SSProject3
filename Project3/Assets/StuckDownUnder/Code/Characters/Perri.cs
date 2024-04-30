@@ -19,6 +19,8 @@ public class Perri : MonoBehaviour
     public AudioClip bestFriend;
     public AudioClip leave;
     public AudioClip whispers;
+    public AudioClip gates;
+    public AudioClip legLess;
     public GameObject backGroundMusic;
     static int talkSequence = 0;
     bool canTalk;
@@ -33,7 +35,7 @@ public class Perri : MonoBehaviour
         canTalk = false;
         audioSource = GetComponent<AudioSource>();
         backGroundSource = backGroundMusic.GetComponent<AudioSource>();
-        var joinClips = new AudioClip[] {alive, bestFriend, leave, whispers};
+        var joinClips = new AudioClip[] {alive, bestFriend, leave, whispers, gates, legLess};
     }
 
     // Update is called once per frame
@@ -62,7 +64,7 @@ public class Perri : MonoBehaviour
     {  
         if(!firstConvo)
         {
-            var joinClips = new AudioClip[] {alive, bestFriend, leave, whispers};
+            var joinClips = new AudioClip[] {alive, bestFriend, leave, whispers, gates, legLess};
             backGroundSource.volume = 0.1f;
             audioSource.clip = joinClips[index];
             // Play current sound
@@ -70,7 +72,7 @@ public class Perri : MonoBehaviour
             audioSource.Play();
             // Increase the index, wrap around if reached end of array
             index = (index + 1) % joinClips.Length;
-            if(index==4)
+            if(index==6)
             {
                 firstConvo = true;
             }
