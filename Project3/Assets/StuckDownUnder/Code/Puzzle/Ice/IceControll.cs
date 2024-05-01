@@ -28,7 +28,7 @@ public class IceControll : MonoBehaviour
         cam1.enabled = true;
         cam2.enabled = false;
         audioSource = player.GetComponent<AudioSource>();
-        if(!PlayerController.firstTimeIce)
+        if(!PlayerController.firstTimeIce && PlayerController.iceInsane)
         {
             PlayerController.firstTimeIce = true;
             audioSource.PlayOneShot(perriGuide);

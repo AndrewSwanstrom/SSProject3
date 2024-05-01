@@ -38,7 +38,7 @@ public class ElectricPuzzleStart : MonoBehaviour
         startTheCog = false;
         CrankSound.SetActive(false);
         audioSource = player.GetComponent<AudioSource>();
-        if(!PlayerController.firstTimeElectric)
+        if(!PlayerController.firstTimeElectric && PlayerController.electricInsane)
         {
             audioSource.PlayOneShot(audioClip);
             PlayerController.firstTimeElectric = true;

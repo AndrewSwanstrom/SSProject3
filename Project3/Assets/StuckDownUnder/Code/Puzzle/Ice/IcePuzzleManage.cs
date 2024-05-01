@@ -276,6 +276,22 @@ public class IcePuzzleManage : MonoBehaviour
                     current.GetComponentInChildren<MeshRenderer>().material = highLight;
                     previous = current;
                 }
+                else if(x==3 && y==6)
+                {
+                    x = 6;
+                    previous.GetComponentInChildren<MeshRenderer>().material = original;
+                    current = iceBlocks[x,y];
+                    current.GetComponentInChildren<MeshRenderer>().material = highLight;
+                    previous = current;
+                }
+                else if(x==3 && y==0)
+                {
+                    x = 6;
+                    previous.GetComponentInChildren<MeshRenderer>().material = original;
+                    current = iceBlocks[x,y];
+                    current.GetComponentInChildren<MeshRenderer>().material = highLight;
+                    previous = current;
+                }
                 else
                 {
                     x--;
