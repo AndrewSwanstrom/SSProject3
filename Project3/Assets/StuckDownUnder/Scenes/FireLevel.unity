@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 539.28876, g: 805.1798, b: 1240.9791, a: 1}
+  m_IndirectSpecularColor: {r: 541.9532, g: 807.5313, b: 1242.7928, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -292357,6 +292357,7 @@ GameObject:
   - component: {fileID: 1947675545}
   - component: {fileID: 1947675546}
   - component: {fileID: 1947675547}
+  - component: {fileID: 1947675548}
   m_Layer: 0
   m_Name: aidan motion animations_0
   m_TagString: Untagged
@@ -292536,6 +292537,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1963226, y: 1.16, z: 1.1029783}
   m_Center: {x: -0.0055799186, y: -6.973424e-11, z: 0.01755023}
+--- !u!114 &1947675548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947675540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea3f06e25f98b744ac0ed5636ce4c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1947707063
 Mesh:
   m_ObjectHideFlags: 0

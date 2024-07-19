@@ -28,6 +28,7 @@ public class SimpleChase : MonoBehaviour
 
         if(distance<EnemeyDistanceRun)
         {
+            animator.SetBool("isRunning", true);
             Vector3 dirToPlayer = transform.position - player.transform.position;
             animator.SetFloat("Look X", dirToPlayer.x);
             animator.SetFloat("Look Y", dirToPlayer.y);
@@ -35,6 +36,10 @@ public class SimpleChase : MonoBehaviour
             Vector3 newPos = transform.position + dirToPlayer;
 
             agent.SetDestination(newPos);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
         }
 
     }
